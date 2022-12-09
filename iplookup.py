@@ -9,13 +9,13 @@ domains=[]
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(
-        prog='python3 ipchecker.py',
-        description="Search IPs with using some DNS servers.",
+        prog='python3 iplookup.py',
+        description="Lootup a IPs with using some DNS servers.",
         epilog='(c) 2022.')
     group = parser.add_mutually_exclusive_group()
-    group.add_argument('-i','--input-file-name',type=str,default='hosts',help="The input filename with domains (default: hosts).",dest="domains")
-    group.add_argument('-d','--domains',type=str,nargs='+',help="The list of domains.",dest="domains")
-    parser.add_argument('-o','--output-file-name',type=str,default='results',help="The name of results file (default: results).",dest="ofilename")
+    group.add_argument('-i','--input-file-name',type=str,default='hosts',help="The input filename with a domains (default: hosts).",dest="domains")
+    group.add_argument('-d','--domains',type=str,nargs='+',help="The list of the domains.",dest="domains")
+    parser.add_argument('-o','--output-file-name',type=str,default='results',help="The name of a results file (default: results).",dest="ofilename")
     namespace=parser.parse_args()
     domains=namespace.domains
     ofilename=namespace.ofilename
